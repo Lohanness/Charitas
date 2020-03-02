@@ -36,7 +36,7 @@
 
    if exist ".\SnakeTail.exe" goto SNAKETAIL
 
-   start /min /belownormal pwsh -noexit -executionpolicy bypass -command "& .\reader.ps1 -log 'MultiPoolMiner_\d\d\d\d-\d\d-\d\d\.txt' -sort '^[^_]*_' -quickstart"
+   start /min /belownormal pwsh -noexit -windowstyle hidden -executionpolicy bypass -command "& .\reader.ps1 -log 'MultiPoolMiner_\d\d\d\d-\d\d-\d\d\.txt' -sort '^[^_]*_' -quickstart"
    goto MINING
 
    :SNAKETAIL
@@ -44,7 +44,7 @@
    if "%ERRORLEVEL%"=="1" start /min .\SnakeTail.exe .\MPM_SnakeTail_LogReader.xml
 
    :MINING
-   start /min /belownormal pwsh -noexit -executionpolicy bypass -windowstyle minimized -command "%command%"
+   start /min /belownormal pwsh -noexit -executionpolicy bypass -windowstyle hidden -command "%command%"
    exit /b
 
  :UACPrompt
