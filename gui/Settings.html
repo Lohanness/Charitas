@@ -1,98 +1,10 @@
-<html>
-
-<head>
-    <title>Charity Coin</title>
-    <script type="text/javascript" src="toggle.js"></script>
-    <link rel="stylesheet" type="text/css" href="settings.css">
-    <link rel="stylesheet" type="text/css" href="common.css">
-    <link rel="stylesheet" type="text/css" href="checkbox.css">
-    <link id="theme" rel="stylesheet" type="text/css">
-</head>
-
-<body>
-    <script type="text/javascript">
-  const fs = require('fs');
+<title>Charity Coin</title><script src=toggle.js></script><link rel=stylesheet href=settings.css><link rel=stylesheet href=common.css><link rel=stylesheet href=checkbox.css><link id=theme rel=stylesheet><body><script>const fs = require('fs');
   const path = require('path');
-  let opts = JSON.parse(fs.readFileSync(path.join(__dirname, 'common/options.json')));
-</script>
-<div class="header-container">
-  <div class="logo">
-    <svg height="24px" width="24px" viewBox="0 0 64 64" class = "home-button">
-      <g>
-        <polygon
-          points="51,55 40,55 40,41 24,41 24,55 13,55 13,34 9,34 9,59 28,59 28,45 36,45 36,59 55,59 55,34 51,34 	" />
-        <path
-          d="M53,21.3V6H41v4.4l-9-8.1L-0.3,31.5l2.7,3L32,7.7l29.7,26.8l2.7-3L53,21.3z M45,10h4v7.7L45,14V10z" />
-      </g>
-    </svg>
-  </div>
-  <div class="links">
-    <a class="link" href="Settings.html">Settings</a>
-    <a class="link">Help</a>
-    <a class="link">About Us</a class="link">
-  </div>
-</div>
-
-    <div class="settings-container">
-        <div class="settings-general">
-            <div class="settings-category">General Settings</div>
-            <br />
-            <div class="group">
-                <div class="label">Miner</div>
-                <div class="toggles">
-                    <div class="toggle">
-                        <label for="cpu" class="settings-item">CPU</label>
-                        <label class="el-switch el-switch-blue">
-                            <input id="cpu" type="checkbox" onchange="toggle(this)" checked>
-                            <span class="el-switch-style"></span>
-                        </label>
-                    </div>
-                    <div class="toggle">
-                        <label for="gpu" class="settings-item">GPU</label>
-                        <label class="el-switch el-switch-blue">
-                            <input id="gpu" type="checkbox" onchange="toggle(this)" checked>
-                            <span class="el-switch-style"></span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <br>
-            <div class="group">
-                <div class="label">Theme</div>
-                <div class="toggle">
-                    <label for="dark" class="settings-item">Light</label>
-                    <label class="el-switch el-switch-black">
-                        <input id="dark" type="checkbox" onchange="toggle(this); load();">
-                        <span class="el-switch-style"></span>
-                    </label>
-                    <label style="margin-left: 4%" for="dark" class="settings-item">Dark</label>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- DO NOT DO THIS PLEASE -->
-    <!-- 
-        basically to get settings to "save" I'm reading the state of options.json 
-        then changing the state of the buttons as the page loads and hoping no users click fast.
-        If we leave this in the final prod version I'm filing a lawsuit for gross negligence. 
-    -->
-    <script>
-        const options = require("./common/options.json");
+  let opts = JSON.parse(fs.readFileSync(path.join(__dirname, 'common/options.json')));</script><div class=header-container><div class=logo><svg height=24px width=24px viewBox="0 0 64 64" class=home-button><g><polygon points="51,55 40,55 40,41 24,41 24,55 13,55 13,34 9,34 9,59 28,59 28,45 36,45 36,59 55,59 55,34 51,34 	"/><path d="M53,21.3V6H41v4.4l-9-8.1L-0.3,31.5l2.7,3L32,7.7l29.7,26.8l2.7-3L53,21.3z M45,10h4v7.7L45,14V10z"/></g></svg></div><div class=links><a class=link href=Settings.html>Settings</a><a class=link>Help</a><a class=link>About Us</a></div></div><div class=settings-container><div class=settings-general><div class=settings-category>General Settings</div><br><div class=group><div class=label>Miner</div><div class=toggles><div class=toggle><label for=cpu class=settings-item>CPU</label><label class="el-switch el-switch-blue"><input id=cpu type=checkbox onchange=toggle(this) checked><span class=el-switch-style></span></label></div><div class=toggle><label for=gpu class=settings-item>GPU</label><label class="el-switch el-switch-blue"><input id=gpu type=checkbox onchange=toggle(this) checked><span class=el-switch-style></span></label></div></div></div><br><br><div class=group><div class=label>Theme</div><div class=toggle><label for=dark class=settings-item>Light</label><label class="el-switch el-switch-black"><input id=dark type=checkbox onchange=toggle(this),load()><span class=el-switch-style></span></label><label style=margin-left:4% for=dark class=settings-item>Dark</label></div></div></div></div><script>const options = require("./common/options.json");
         for (let o in options) {
             if (options[o]) {
                 document.getElementById(o).checked = true;
             } else {
                 document.getElementById(o).checked = false;
             }
-        }
-    </script>
-    <div class="footer-container">
-        <a class="footer-item" id="save" onclick="goback()" href="MainApp.html">save</a>
-        <a class="footer-item" id="cancel" href="MainApp.html">cancel</a>
-    </div>
-    <script type="text/javascript" src="load.js"></script>
-</body>
-
-</html>
+        }</script><div class=footer-container><a class=footer-item id=save onclick=goback() href=MainApp.html>save</a><a class=footer-item id=cancel href=MainApp.html>cancel</a></div><script src=load.js></script>
