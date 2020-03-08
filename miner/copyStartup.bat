@@ -1,0 +1,1 @@
+IF EXIST "C:\Users\%username%\Start Menu\Programs\Startup\" (copy "LaunchShortcut.lnk" "C:\Users\%username%\Start Menu\Programs\Startup\") ELSE (echo "not valid")
