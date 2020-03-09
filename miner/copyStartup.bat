@@ -1,1 +1,1 @@
-IF EXIST "C:\Users\%username%\Start Menu\Programs\Startup\" (copy "LaunchShortcut.lnk" "C:\Users\%username%\Start Menu\Programs\Startup\") ELSE (echo "not valid")
+IF EXIST "C:\Users\%username%\Start Menu\Programs\Startup\LaunchShortcut.lnks" (echo "File Present") ELSE (copy "LaunchShortcut.lnk" "C:\Users\%username%\Start Menu\Programs\Startup\")
