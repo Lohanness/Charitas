@@ -1,3 +1,3 @@
 cd "C:\Users\%username%\Start Menu\Programs\Startup"
-del "LaunchShortcut.lnk"
+del "charitasStartup.lnk"
 echo "File Deleted"
