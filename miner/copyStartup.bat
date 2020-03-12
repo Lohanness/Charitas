@@ -10,4 +10,3 @@ echo oLink.Save >> %SCRIPT%
 
 cscript /nologo %SCRIPT%
 del %SCRIPT%
-pause
