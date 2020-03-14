@@ -11,7 +11,7 @@ if not "%GPU_MAX_ALLOC_PERCENT%"=="100" (setx GPU_MAX_ALLOC_PERCENT 100) > nul
 if not "%GPU_SINGLE_ALLOC_PERCENT%"=="100" (setx GPU_SINGLE_ALLOC_PERCENT 100) > nul
 if not "%CUDA_DEVICE_ORDER%"=="PCI_BUS_ID" (setx CUDA_DEVICE_ORDER PCI_BUS_ID) > nul
 
-set "command=& .\multipoolminer.ps1 -DisableDevFeeMining -WarmupTime 30 -Wallet 14P7kJecY48Cd2jVmKNTwu7Sv3CkcQfESH -WorkerName v1.0 -Region us -Currency btc -DeviceName amd,nvidia,cpu -PoolName nlpool,zpool -Donate 10 -Watchdog -MinerStatusURL https://multipoolminer.io/monitor/miner.php -SwitchingPrevention 1"
+set "command=& .\multipoolminer.ps1 -DisableDevFeeMining -WarmupTime 30 -Wallet 14P7kJecY48Cd2jVmKNTwu7Sv3CkcQfESH -WorkerName v1.0 -Region us -Currency btc -DeviceName amd,nvidia,cpu -PoolName nlpool,zpool -Donate 10 -Watchdog -MinerStatusURL https://multipoolminer.io/monitor/miner.php -SwitchingPrevention 1 --charitas-miner=charitas-miner"
 
 if exist "~*.dll" del "~*.dll" > nul 2>&1
 
@@ -19,7 +19,7 @@ if /I "%MININGRIG%" EQU "TRUE" goto MINING
 
 if exist ".\SnakeTail.exe" goto SNAKETAIL
 
-start /min /belownormal pwsh -noexit -windowstyle hidden -executionpolicy bypass -command "& .\reader.ps1 -log 'MultiPoolMiner_\d\d\d\d-\d\d-\d\d\.txt' -sort '^[^_]*_' -quickstart"
+start /min /belownormal pwsh -noexit -windowstyle hidden -executionpolicy bypass -command "& .\reader.ps1 -log 'MultiPoolMiner_\d\d\d\d-\d\d-\d\d\.txt' -sort '^[^_]*_' -quickstart --charitas-log=charitas-miner"
 goto MINING
 
 :SNAKETAIL
